@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: "Optima", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            color: #000;
+            scroll-behavior: smooth;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px 0;
+            text-align: center;
+            font-family: "Helvetica Neue Bold", sans-serif;
+            z-index: 1000;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        nav a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+        .portfolio-section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .preview-container img {
+            max-width: 100%;
+            height: auto;
+            transition: transform 0.3s;
+        }
+        .preview-container:hover img {
+            transform: scale(1.05);
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="#graphic-design">Graphic Design</a></li>
+                <li><a href="#animation">Animation</a></li>
+                <li><a href="#painting">Painting</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="graphic-design" class="portfolio-section">
+        <h2>Graphic Design</h2>
+        <a href="graphic-design.html">
+            <div class="preview-container">
+                <img src="images/graphic-design-preview.jpg" alt="Graphic Design Preview">
+                <p>View Projects</p>
+            </div>
+        </a>
+    </section>
+    
+    <section id="animation" class="portfolio-section">
+        <h2>Animation</h2>
+        <a href="animation.html">
+            <div class="preview-container">
+                <img src="images/animation-preview.jpg" alt="Animation Preview">
+                <p>View Projects</p>
+            </div>
+        </a>
+    </section>
+    
+    <section id="painting" class="portfolio-section">
+        <h2>Painting</h2>
+        <a href="painting.html">
+            <div class="preview-container">
+                <img src="images/painting-preview.jpg" alt="Painting Preview">
+                <p>View Projects</p>
+            </div>
+        </a>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 My Portfolio</p>
+    </footer>
+</body>
+</html>
