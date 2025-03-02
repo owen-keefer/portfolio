@@ -10,7 +10,7 @@
             font-family: "Optima", sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #fff;
+            background-color: #e6e6e6;
             color: #000;
             scroll-behavior: smooth;
         }
@@ -24,17 +24,30 @@
             font-family: "Helvetica Neue Bold", sans-serif;
             z-index: 1000;
         }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .header-title {
+            font-size: 10pt;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
         nav ul {
             list-style: none;
             padding: 0;
             display: flex;
-            justify-content: center;
             gap: 20px;
         }
         nav a {
             text-decoration: none;
             color: black;
             font-weight: bold;
+            font-size: 10pt;
         }
         .portfolio-section {
             height: 100vh;
@@ -61,8 +74,8 @@
 </head>
 <body>
     <header>
-        <h1>My Portfolio</h1>
         <nav>
+            <div class="header-title">Owen Keefer</div>
             <ul>
                 <li><a href="#graphic-design">Graphic Design</a></li>
                 <li><a href="#animation">Animation</a></li>
@@ -102,7 +115,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2024 My Portfolio</p>
+        <p>&copy; 2024 Owen Keefer</p>
     </footer>
 </body>
 </html>
