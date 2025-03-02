@@ -15,14 +15,14 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 5px 20px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 header h1 a {
     text-decoration: none;
     color: black;
-    font-size: 70%;
+    font-size: 12pt;
 }
 
 nav {
@@ -37,6 +37,7 @@ nav ul {
     gap: 20px;
     margin: 0;
     padding: 0;
+    flex-wrap: wrap;
 }
 
 nav ul li {
@@ -62,6 +63,7 @@ nav ul li a {
     display: flex;
     justify-content: space-between;
     padding: 50px 5%;
+    flex-wrap: wrap;
 }
 
 .category {
