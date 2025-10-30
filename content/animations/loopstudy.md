@@ -2,7 +2,7 @@
 title = "Loop Study"
 +++
 
-{{< showcase >}}
+{{< showcase link="ZZ5LpwO-An4">}}
 
 ![](/thumbnails/animation/loopstudy.png)
 
