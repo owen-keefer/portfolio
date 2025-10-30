@@ -1,0 +1,35 @@
+{{ $dir := string (.Get "dir") }}
+{{ $unit := "750" }}
+
+<ul class="image-gallery">
+{{ range (readDir (print "/assets" $dir)) }}
+  {{- $image := resources.Get (printf "%s/%s" $dir .Name) -}}
+  {{- $imageurl := printf "%s/%s" $dir .Name -}}
+  {{- $imagetitle := index (split .Name ".") 0 -}}
+  {{- if eq $image.ResourceType "image" -}}
+    {{- $ratio := div (float $image.Width) (float $image.Height) -}}
+    {{- $class := "square" -}}
+    {{- $resizeParam := printf "%sx%s Center q50" $unit $unit -}}
+    {{- if lt $ratio 0.7 }}
+      {{- $resizeParam = printf "%sx%d Center q50" $unit (int (add (mul (float $unit) (float 2.08) ) 0) ) -}}
+      {{ $class = "portrait"}}
+    {{- end -}}
+    {{- if gt $ratio 1.5 }}
+      {{- $resizeParam = printf "%dx%s Center q50" (int (add (mul (float $unit) (float 2.08)) 0) ) $unit  -}}
+      {{ $class = "landscape"}}
+    {{- end -}}
+
+
+    {{- if strings.HasSuffix $imagetitle "_large" -}}
+      {{- $class = printf "%s large" $class -}}
+    {{- end -}}
+
+    <li class="{{ $class }}">
+      <a href="{{ ($image.Fit "1600x1600 Center q50").Permalink }}" data-src="{{ $image.Permalink}}">
+        <img src="{{ ($image.Fill $resizeParam).Permalink }}" alt="Image {{ $imagetitle }}" />
+      </a>
+    </li>
+
+  {{- end -}}
+{{ end }}
+</ul>

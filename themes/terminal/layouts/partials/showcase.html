@@ -1,0 +1,46 @@
+<!-- 
+{{/* 
+    
+    Usage: 
+        {{< showcase yt="yt_link">}}
+
+        ![](/image.png) / ![](jRcMoAeNHmM)
+
+        Text Details...
+        
+        {{< /showcase >}}
+    
+*/}}
+-->
+
+{{- $inner := .content -}}
+
+{{ $link := .link | default "" }}
+
+{{ $inner = markdownify $inner }}
+{{ $image := index (findRE `(?s)<p><img.*?p>` $inner 1) 0 }}
+{{ $inner = replace $inner $image "" 1 }}
+
+{{ $src := "" }}
+{{- with findRE `src="(.*?)"` $image 1 -}}
+  {{- $src = index . 0 | replaceRE `src="(.*?)"` "$1" -}}
+{{- end -}}
+
+<section class="showcase">
+    <div class="showcase-container">
+        {{if $link}}
+            {{- $id := $link -}}
+
+            {{/*  YOUTUBE SHORTCODE HERE  */}}
+            <a class="image shortcode-youtube" style="background: url('{{ $src }}');" rel="noopener noreferrer" href="https://www.youtube.com/watch?v={{ $id }}" title="Play Youtube video" target="_blank">
+            </a>
+
+        {{ else }}
+            <a class="image lightbox-image" style="background: url('{{ $src }}');" href="{{ $src }}" data-src="{{ $src }}"></a>
+        {{end}}
+
+        <div class="text">
+            <div>{{ $inner | safeHTML }}</div>
+        </div>
+    </div>
+</section>

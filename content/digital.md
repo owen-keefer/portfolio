@@ -1,0 +1,5 @@
++++
+title = "Digital Work"
++++
+
+{{< imagegrid >}}

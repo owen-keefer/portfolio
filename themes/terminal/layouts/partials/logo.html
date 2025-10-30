@@ -1,0 +1,9 @@
+<a href="{{ if $.Site.Params.Logo.LogoHomeLink }}{{ $.Site.Params.Logo.LogoHomeLink }}{{else}}{{ $.Site.BaseURL }}{{ end }}">
+  <div class="logo">
+    {{ with $.Site.Params.Logo.logoPath }}
+      {{ $logo := resources.Get . }}
+      {{/*  <img src="{{ $logo.RelPermalink }}" alt="{{ $.Site.Title }} logo" />  */}}
+      <p>OWEN KEEFER</p>
+    {{ end }}
+  </div>
+</a>

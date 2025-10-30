@@ -1,0 +1,68 @@
+baseurl: "https://drewkeefer.github.io/folio"
+languageCode: "en-us"
+theme: "terminal"
+pagination:
+  pagerSize: 5
+
+ignoreLogs: ['warning-goldmark-raw-html']
+
+
+markup:
+  highlight:
+    noClasses: false
+
+params:
+  contentTypeName: "posts"
+  showMenuItems: 5
+  showLanguageSelector: false
+  fullWidthTheme: false
+  centerTheme: true
+  autoCover: true
+  showLastUpdated: false
+
+  twitter:
+    creator: ""
+    site: ""
+
+languages:
+  en:
+    languageName: "English"
+    title: "Owen Keefer"
+    params:
+      subtitle: "Portfolio site for Owen Keefer"
+      owner: ""
+      keywords: ""
+      copyright: ""
+      menuMore: "Show more"
+      readMore: "Read more"
+      readOtherPosts: "Read other posts"
+      newerPosts: "Newer posts"
+      olderPosts: "Older posts"
+      missingContentMessage: "Page not found..."
+      missingBackButtonLabel: "Back to home page"
+      minuteReadingTime: "min read"
+      words: "words"
+
+      logo:
+        logoPath: "branding/cib-abstract.svg"
+        logoText: "owen keefer"
+        logoSubtitle: "Selected studies and experiments in motion"
+        logoHomeLink: "/folio"
+
+    menu:
+      main:
+        - identifier: "about"
+          name: "About"
+          url: "/about"
+        - identifier: "animation"
+          name: "Animation"
+          url: "/animation"
+        - identifier: "digital"
+          name: "Digital Works"
+          url: "/digital"
+        - identifier: "graphics"
+          name: "Graphic Design"
+          url: "/graphics"
+        - identifier: "painting"
+          name: "Paintings"
+          url: "/painting"

@@ -1,0 +1,68 @@
+{{ $pageName := lower (replace .Page.File.BaseFileName " " "-") }}
+{{ $images := index (index .Site.Data "meta") $pageName "images" }}
+
+{{ if $images }}
+    {{ $sorted := sort $images "order" }}
+    <div class="image-grid-container">
+
+        <div class="selector-column">
+            {{ $firstProcessed := 0 }}
+            {{ range $index, $val := $sorted }}
+                {{ $imagePath := resources.Get (printf "./thumbnails/%s/%s" $pageName .file) }}
+                {{ $image := $imagePath.Process "png"}}
+
+                {{ if not $index}}
+                    {{ $firstProcessed = $image }}
+                {{ end}}
+                <a href="{{ .pagepath }}">
+                <button 
+                    class="thumbnail-button gallery"
+                    data-src="{{ $image.RelPermalink }}"
+                    data-title="{{ .title }}"
+                    data-caption="{{ .caption }}"
+                    data-href="{{ .pagepath }}"
+                    onmouseenter="makeActive(this)"
+                    onfocus="makeActive(this)"
+                >
+                    {{ .title }}
+                </button>
+                </a>
+            {{ end }}
+        </div>
+
+        <div class="preview-column">
+            {{ $firstImage := (index $sorted 0)}}
+            <a id ="preview-link" class = "no-lightbox" href= "{{ $firstImage.pagepath }}">
+                <img id="preview-image" src="{{ $firstProcessed.RelPermalink }}" alt="">
+            </a>
+            <div class="preview-text">
+                <h2 id="preview-title"> {{$firstImage.title}}</h2>
+                <p id="preview-caption"> {{$firstImage.caption}}</p>
+            </div> 
+        </div>
+    </div>
+
+{{ else }}
+  <p>No images found for "{{ $pageName }}"</p>
+{{ end }}
+
+<script>
+    const previewLink = document.getElementById("preview-link")
+    const previewImage = document.getElementById("preview-image");
+    const previewTitle = document.getElementById("preview-title")
+    const previewCaption = document.getElementById("preview-caption")
+
+    function makeActive(button) {
+        const src = button.getAttribute("data-src");
+        const page_link = button.getAttribute("data-href")
+        const title = button.getAttribute("data-title");
+        const caption = button.getAttribute("data-caption");
+
+        previewLink.href = page_link;
+        previewLink.title = title;
+        previewImage.src = src;
+        previewImage.alt = title;
+        previewTitle.innerText = title;
+        previewCaption.innerText = caption;
+    };
+</script>
