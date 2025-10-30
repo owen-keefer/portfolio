@@ -1,4 +1,4 @@
-baseurl: "https://drewkeefer.github.io/folio"
+baseurl: "https://owen-keefer.github.io/portfolio"
 languageCode: "en-us"
 theme: "terminal"
 pagination:
@@ -47,7 +47,7 @@ languages:
         logoPath: "branding/cib-abstract.svg"
         logoText: "owen keefer"
         logoSubtitle: "Selected studies and experiments in motion"
-        logoHomeLink: "/folio"
+        logoHomeLink: "/portfolio"
 
     menu:
       main:
@@ -63,6 +63,6 @@ languages:
         - identifier: "graphics"
           name: "Graphic Design"
           url: "/graphics"
-        - identifier: "painting"
+        - identifier: "paintings"
           name: "Paintings"
-          url: "/painting"
+          url: "/paintings"

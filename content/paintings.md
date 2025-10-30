@@ -1,5 +1,5 @@
 +++
-title = "Graphic Design"
+title = "Paintings"
 +++
 
 {{< imagegrid >}}

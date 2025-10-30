@@ -1,28 +1,16 @@
 animation: 
   images:
     - file: "loopstudy.png"
-      title: "Loop Study 01"
+      title: "Loop Study 02"
       caption: "30s loop — 3D spline extrusion, crisp lighting"
       order: 1
       pagepath: "../animations/loopstudy"
-    - file: "anim_02-01.png"
-      title: "Stop-Motion Forms"
-      order: 2
-      pagepath: "../animations/stopmotion"
-      caption: "clay morphing sequence with tactile textures"
-    - file: "aa03.png"
-      title: "Hand-Drawn Cycles"
-      order: 3
-      caption: "12FPS Pencil-on-paper cycle, scanned and composited"
 
 digital: 
   images:
-    - file: "digit_01-01.png"
-      title: "Houses"
-      order: 1
-      caption: "procedural motion graphics with hard cuts"
-      pagepath: "../digitalworks/houses"
-    - file: "digit_02-01.png"
-      title: "Glitch Experiments"
-      order: 3
-      caption: "Datamosh passes, temporal tearing"
+
+graphics:
+  images:
+
+paintings:
+  images:
