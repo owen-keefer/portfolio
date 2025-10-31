@@ -1,16 +1,57 @@
 animation: 
   images:
-    - file: "loopstudy.png"
-      title: "Loop Study 02"
-      caption: "30s loop — 3D spline extrusion, crisp lighting"
+    - file: "tb_snowglobes.png"
+      title: "Snow Globes"
+      caption: "3:31 — Digital Claymation, Made in Blender"
       order: 1
-      pagepath: "../animations/loopstudy"
+      pagepath: "../animations/snowglobes"
+
+    - file: "tb_takeaseat.png"
+      title: "Take a Seat"
+      caption: "1:17 — 3D Animation, Made in Blender"
+      order: 2
+      pagepath: "../animations/takeaseat"
+
+    - file: "tb_theparrot.png"
+      title: "The Parrot"
+      caption: "1:30 — 2D Animation, Made in AE"
+      order: 3
+      pagepath: "../animations/theparrot"
+
+    - file: "tb_clubpenguin.png"
+      title: "Club Penguin Anime"
+      caption: "0:26 — Traditional Animation, Compiled in Blender"
+      order: 4
+      pagepath: "../animations/clubpenguin"
+
+    - file: "tb_gourdkeeper.png"
+      title: "Gourd Keeper"
+      caption: "Loop — 2D Animation, Made in Blender"
+      order: 5
+      pagepath: "../animations/gourdkeeper"
+
+    - file: "tb_tally.png"
+      title: "Tally Saves the Internet"
+      caption: "1:59 — 3D Animation, Made in Blender"
+      order: 6
+      pagepath: "../animations/tally"
 
 digital: 
   images:
 
 graphics:
   images:
+    - file: "loopstudy.png"
+      title: "London's History of Bears"
+      caption: "Nottingham University, Illustration"
+      order: 1
+      pagepath: "../graphics/bearmaps"
+
+    - file: "loopstudy.png"
+      title: "London's History of Bears"
+      caption: "Nottingham University, Illustration"
+      order: 2
+      pagepath: "../graphics/bearmaps"
 
 paintings:
   images:
