@@ -1,7 +1,11 @@
 +++
-title = "About"
+title = ""
 +++
 
-# Under construction
+# open to commissions
 
-should be back up and running soon
+email: owkeefer@outlook.com
+
+phone: +44 7521 168871
+
+instagram: @ovenkeefer

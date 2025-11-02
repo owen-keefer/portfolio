@@ -38,20 +38,85 @@ animation:
 
 digital: 
   images:
+    - file: "buildings.gif"
+      title: "Invisible Buildings"
+      caption: "Procedural Generation, Made in Blender"
+      order: 1
+      pagepath: "../digital/buildings"
+
+    - file: "tb_manus.png"
+      title: "Manus Series"
+      caption: "Digital Painting, Made in Rebelle"
+      order: 2
+      pagepath: "../digital/manus"
+  
+    - file: "tb_portraits.png"
+      title: "Portrait Studies"
+      caption: "Digital Painting, Made in Rebelle"
+      order: 3
+      pagepath: "../digital/portraits"
 
 graphics:
   images:
-    - file: "loopstudy.png"
+    - file: "tb_bearmaps.png"
       title: "London's History of Bears"
       caption: "Nottingham University, Illustration"
       order: 1
       pagepath: "../graphics/bearmaps"
 
-    - file: "loopstudy.png"
-      title: "London's History of Bears"
+    - file: "tb_caves.png"
+      title: "City of Caves"
       caption: "Nottingham University, Illustration"
+      order: 3
+      pagepath: "../graphics/caves"
+
+    - file: "tb_transformations.png"
+      title: "Transformations"
+      caption: "Imagineer, Branding Guide"
       order: 2
-      pagepath: "../graphics/bearmaps"
+      pagepath: "../graphics/transformations"
+
+    - file: "tb_harmonikz.png"
+      title: "Harmonikz"
+      caption: "Media Mania, Branding Guide"
+      order: 4
+      pagepath: "../graphics/harmonikz"
+
+    - file: "tb_brothersdrake.png"
+      title: "Brothers Drake Meadery"
+      caption: "Brothers Drake Meadery, Product Design"
+      order: 5
+      pagepath: "../graphics/brothersdrake"
+
+    - file: "tb_in.png"
+      title: "IN: The College Planning Experts"
+      caption: "In: College Planning, Branding Guide"
+      order: 6
+      pagepath: "../graphics/in"
+
 
 paintings:
   images:
+    - file: "tb_heph.jpg"
+      title: "The Shield of Achilles"
+      caption: "Oil Painting, 24 x 35.8 inches"
+      order: 1
+      pagepath: "../paintings/shield"
+
+    - file: "tb_madonna.jpg"
+      title: "Seraph Madonna"
+      caption: "Oil Painting, 37 x 56 inches"
+      order: 2
+      pagepath: "../paintings/madonna"
+
+    - file: "tb_king.png"
+      title: "King of Cool"
+      caption: "Screen Print, 13 x 18 inches"
+      order: 3
+      pagepath: "../paintings/king"
+
+    - file: "tb_mural.png"
+      title: "Faculty Mural"
+      caption: "Acrylic Mural, 26 x 11 feet"
+      order: 4
+      pagepath: "../paintings/mural"

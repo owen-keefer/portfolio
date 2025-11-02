@@ -16,4 +16,4 @@ Tally Saves the Internet
 
 {{< /showcase >}}
 
-{{< gallery dir="/galleries/animation/loopstudy" >}}
+{{< gallery dir="/galleries/animation/" >}}

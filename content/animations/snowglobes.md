@@ -16,4 +16,4 @@ Digital claymation made in Blender, ambient music and sfx produced in Logic. An 
 
 {{< /showcase >}}
 
-{{< gallery dir="/galleries/animation/loopstudy" >}}
+{{< gallery dir="/galleries/animation/" >}}

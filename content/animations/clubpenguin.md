@@ -16,4 +16,4 @@ Traditional animation using grease pencil in Blender.  Incorporates frame by fra
 
 {{< /showcase >}}
 
-{{< gallery dir="/galleries/animation/loopstudy" >}}
+{{< gallery dir="/galleries/animation/" >}}

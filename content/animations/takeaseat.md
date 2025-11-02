@@ -16,4 +16,4 @@ Take a Seat
 
 {{< /showcase >}}
 
-{{< gallery dir="/galleries/animation/loopstudy" >}}
+{{< gallery dir="/galleries/animation/" >}}

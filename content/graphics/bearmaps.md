@@ -2,9 +2,9 @@
 title = "London's History of Bears"
 +++
 
-{{< showcase link="ZZ5LpwO-An4">}}
+{{< showcase >}}
 
-![](/thumbnails/animation/loopstudy.png)
+![](/thumbnails/graphics/tb_bearmaps.png)
 
 London's History of Bears
 
@@ -16,4 +16,4 @@ Collaboration with Nottingham University to create illustrated maps exploring th
 
 {{< /showcase >}}
 
-{{< gallery dir="/galleries/animation/loopstudy" >}}
+{{< gallery dir="/galleries/graphics/bearmaps" >}}
