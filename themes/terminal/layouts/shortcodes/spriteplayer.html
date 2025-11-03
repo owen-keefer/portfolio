@@ -1,0 +1,8 @@
+{{ $src := string (.Get "src") }}
+
+{{- $imagePath := resources.Get (printf "%s" $src) -}}
+{{ $image := $imagePath.Process "png"}}
+
+<div class="sprite-player" style="background: url(' {{ $image.RelPermalink }} ')">
+    {{/*  <img src="{{$image.RelPermalink}}" alt="Image" />  */}}
+</div>

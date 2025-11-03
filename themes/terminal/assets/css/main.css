@@ -503,18 +503,14 @@ iframe[src*="youtube.com"] {
 }
 
 
-/* Image Grid */
+/*------------------------*/
+/* Image Grid
+/*------------------------*/
 
 .image-grid-container {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 1rem;
-}
-
-@media (max-width: 684px) {
-  .image-grid-container{
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  }
 }
 
 .selector-column{
@@ -525,6 +521,7 @@ iframe[src*="youtube.com"] {
 .thumbnail-button{
   border: 1px solid var(--accent);
   justify-content: start;
+  text-align: left;
   padding: 1.5rem 1rem;
   font-weight: normal;
   width: 100%;
@@ -542,17 +539,62 @@ iframe[src*="youtube.com"] {
   padding: 0px;
   border: none;
   width: 100%;
-  height: clamp(25vh, 50vh, 50vh);
+  height: clamp(20vh, 40vh, 50vh);
   object-fit: cover;
 }
 
 .preview-text{
   border-top: 1px solid var(--accent);
   margin-top: 1rem;
+  height: 8rem;
 }
 
 #preview-caption{
   text-transform: uppercase;
+}
+
+@media (max-width: 684px) {
+  .image-grid-container{
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  }
+
+  .selector-column{
+    grid-row: 3;
+  }
+
+  .mobile-selection-container{
+    display: flex !important;
+  }
+
+  #preview-image{
+    height: clamp(20vh, 30vh, 50vh);
+  }
+
+}
+
+.mobile-selection-container{
+  display: none;
+  gap: 1rem;
+  justify-content: space-around;
+  margin: 2rem 0px;
+}
+
+.mobile-selector{
+  height: 2rem;
+  aspect-ratio: 1;
+  border: 1px solid var(--accent);
+  padding: 8px;
+  background-clip: content-box;
+}
+
+.mobile-selector.active{
+  background-color: var(--accent);
+  background-clip: content-box;
+}
+
+#mobile-next, #mobile-prev {
+  font-family: "Inter";
+  align-self: center;
 }
 
 /*------------------------*/
@@ -581,6 +623,7 @@ iframe[src*="youtube.com"] {
   padding: 10px;
   background-position: center !important;
   background-size: cover !important;
+  min-height: 50vh;
 }
 
 .showcase-container .text {
@@ -683,4 +726,18 @@ iframe[src*="youtube.com"] {
 @media (max-width: 45rem) {
     .shortcode-youtube::before {background-size: auto 12vw;}
     .shortcode-youtube::after {background-position: calc(100% - 3vw) calc(100% - 3vw); background-size: auto 6vw;}
+}
+
+/*------------------------*/
+/* sprite player
+/*------------------------*/
+
+.sprite-player {
+  width: 330px;
+  height: 330px;
+  animation: playstrip 4s steps(8) infinite;
+}
+
+@keyframes playstrip {
+  100% { background-position: -2640px;}
 }

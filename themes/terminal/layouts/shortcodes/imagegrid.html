@@ -14,15 +14,13 @@
                 {{ if not $index}}
                     {{ $firstProcessed = $image }}
                 {{ end}}
-                <a href="{{ .pagepath }}">
+                <a href="{{ .pagepath }}" tabindex="-1">
                 <button 
-                    class="thumbnail-button gallery"
+                    class="thumbnail-button"
                     data-src="{{ $image.RelPermalink }}"
                     data-title="{{ .title }}"
                     data-caption="{{ .caption }}"
                     data-href="{{ .pagepath }}"
-                    onmouseenter="makeActive(this)"
-                    onfocus="makeActive(this)"
                 >
                     {{ .title }}
                 </button>
@@ -40,29 +38,16 @@
                 <p id="preview-caption"> {{$firstImage.caption}}</p>
             </div> 
         </div>
+
+        <div class="mobile-selection-container">
+            <a id="mobile-prev"><</a>
+            {{ range $index, $val := $sorted }}
+                <button class="mobile-selector" data-src="{{$index}}"></button>
+            {{ end }}
+            <a id="mobile-next">></a>
+        </div>
     </div>
 
 {{ else }}
   <p>No images found for "{{ $pageName }}"</p>
 {{ end }}
-
-<script>
-    const previewLink = document.getElementById("preview-link")
-    const previewImage = document.getElementById("preview-image");
-    const previewTitle = document.getElementById("preview-title")
-    const previewCaption = document.getElementById("preview-caption")
-
-    function makeActive(button) {
-        const src = button.getAttribute("data-src");
-        const page_link = button.getAttribute("data-href")
-        const title = button.getAttribute("data-title");
-        const caption = button.getAttribute("data-caption");
-
-        previewLink.href = page_link;
-        previewLink.title = title;
-        previewImage.src = src;
-        previewImage.alt = title;
-        previewTitle.innerText = title;
-        previewCaption.innerText = caption;
-    };
-</script>

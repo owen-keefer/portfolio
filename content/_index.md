@@ -5,6 +5,8 @@ date = ""
 description = ""
 +++
 
+{{< spriteplayer src="/branding/portraitsheet.png" >}}
+
 # open to commissions
 
 email: owkeefer@outlook.com
