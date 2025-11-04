@@ -39,7 +39,6 @@ function is_vimeolink(url,el) {
 }
 function setGallery(el) {
     var elements = document.body.querySelectorAll(".gallery");
-    console.log(elements)
     elements.forEach(element => {
         element.classList.remove('gallery');
 	});

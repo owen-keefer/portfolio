@@ -1,6 +1,8 @@
-<div class="header__logo">
-  {{ partial "logo.html" . }}
-</div>
+{{ if not .Section }}
+  <div class="header__logo">
+    {{ partial "logo.html" . }}
+  </div>
+{{ end }}
 
 <header class="header">
   {{ if len $.Site.Menus }}

@@ -1,8 +1,61 @@
 {{ define "main" }}
 <article class="post">
-  <h1 class="post-title">
-    <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
-  </h1>
+  <div class="post-head">
+    {{ if .Section}}
+      {{ $meta := index (index .Site.Data "meta") .Section "images" }}
+      {{ if $meta}}
+        {{ $meta = sort $meta "order" }}
+      {{ end }}
+
+      {{ $pageIndex := 0}}
+      {{ $thisPage := .Page.File.BaseFileName}}
+      {{ range $index, $val := $meta }}
+        {{ if eq (path.Base .pagepath) $thisPage }}
+          {{ $pageIndex = $index}}
+        {{ end}}
+      {{ end }}
+
+      {{ $prevPage := 0}}
+      {{ $nextPage := 0}}
+
+      {{ if eq $pageIndex 0}}
+        {{ $prevPage = index $meta (sub (len $meta) 1)}}
+      {{ else }}
+        {{ $prevPage = index $meta (sub $pageIndex 1)}}
+      {{ end}}
+
+      {{ if eq $pageIndex (sub (len $meta) 1)}}
+        {{ $nextPage = index $meta 0}}
+      {{ else }}
+        {{ $nextPage = index $meta (add $pageIndex 1)}}
+      {{ end }}
+
+      <h1 class="post-nav post-title prev">
+        <a href="../{{ path.Base $prevPage.pagepath}}">
+          <p><</p>
+          <p>{{$prevPage.title}}</p>
+        </a>
+      </h1>
+
+      <h1 class="post-title">
+        <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+      </h1>
+
+      <h1 class="post-nav post-title next">
+        <a href="../{{ path.Base $nextPage.pagepath}}">
+          <p>{{$nextPage.title}}</p>
+          <p>></p>
+        </a>
+      </h1>
+
+    {{ else}}
+      <h1 class="post-title">
+        <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+      </h1>
+
+    {{ end }}
+
+  </div>
   <div class="post-meta">
     {{- if .Date -}}
       <time class="post-date">

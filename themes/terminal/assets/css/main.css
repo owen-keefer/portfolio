@@ -732,12 +732,31 @@ iframe[src*="youtube.com"] {
 /* sprite player
 /*------------------------*/
 
-.sprite-player {
-  width: 330px;
-  height: 330px;
-  animation: playstrip 4s steps(8) infinite;
+@media (max-width: 684px) {
+  .sprite-player{
+    width: 350px !important;
+    height: 350px !important;
+    background-size: cover !important;
+    animation: mobilestrip 3s steps(8) infinite !important;
+  }
 }
 
-@keyframes playstrip {
-  100% { background-position: -2640px;}
+@keyframes mobilestrip {
+    100% { background-position: -800%;};
+}
+
+/*------------------------*/
+/* index content
+/*------------------------*/
+
+.index-content{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+@media (max-width: 850px) {
+  .index-content{
+    flex-direction: column;
+  }
 }

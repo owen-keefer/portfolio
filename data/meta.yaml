@@ -4,37 +4,37 @@ animation:
       title: "Snow Globes"
       caption: "3:31 — Digital Claymation, Made in Blender"
       order: 1
-      pagepath: "../animations/snowglobes"
+      pagepath: "../animation/snowglobes"
 
     - file: "tb_takeaseat.png"
       title: "Take a Seat"
       caption: "1:17 — 3D Animation, Made in Blender"
       order: 2
-      pagepath: "../animations/takeaseat"
+      pagepath: "../animation/takeaseat"
 
     - file: "tb_theparrot.png"
       title: "The Parrot"
       caption: "1:30 — 2D Animation, Made in AE"
       order: 3
-      pagepath: "../animations/theparrot"
+      pagepath: "../animation/theparrot"
 
     - file: "tb_clubpenguin.png"
       title: "Club Penguin Anime"
       caption: "0:26 — Traditional Animation, Compiled in Blender"
       order: 4
-      pagepath: "../animations/clubpenguin"
+      pagepath: "../animation/clubpenguin"
 
     - file: "tb_gourdkeeper.png"
       title: "Gourd Keeper"
       caption: "Loop — 2D Animation, Made in Blender"
       order: 5
-      pagepath: "../animations/gourdkeeper"
+      pagepath: "../animation/gourdkeeper"
 
     - file: "tb_tally.png"
       title: "Tally Saves the Internet"
       caption: "1:59 — 3D Animation, Made in Blender"
       order: 6
-      pagepath: "../animations/tally"
+      pagepath: "../animation/tally"
 
 digital: 
   images:

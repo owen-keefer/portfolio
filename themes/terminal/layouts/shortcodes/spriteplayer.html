@@ -1,8 +1,24 @@
 {{ $src := string (.Get "src") }}
 
-{{- $imagePath := resources.Get (printf "%s" $src) -}}
-{{ $image := $imagePath.Process "png"}}
 
-<div class="sprite-player" style="background: url(' {{ $image.RelPermalink }} ')">
-    {{/*  <img src="{{$image.RelPermalink}}" alt="Image" />  */}}
-</div>
+{{- $image := resources.Get (printf "%s" $src) -}}
+{{ $image := $image.Process "resize x600" }}
+
+{{ $w := $image.Width}}
+{{ $h := $image.Height}}
+
+<div class="sprite-player"></div>
+
+<style>
+    .sprite-player {
+        width: {{ div $w 8}}px;
+        height: {{ $h }}px;
+        background-image: url('{{ $image.RelPermalink }}');
+        animation: playstrip 3s steps(8) infinite;
+    }
+
+    @keyframes playstrip {
+        100% { background-position: -{{$w}}px;};
+    }
+
+</style>
