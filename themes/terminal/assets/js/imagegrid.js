@@ -37,12 +37,22 @@ function makeActive(button) {
     var title = button.getAttribute("data-title");
     var caption = button.getAttribute("data-caption");
 
-    previewLink.href = page_link;
-    previewLink.title = title;
-    previewImage.src = src;
-    previewImage.alt = title;
-    previewTitle.innerText = title;
-    previewCaption.innerText = caption;
+    previewLink.classList.add("blackout")
+    var temp = new Image();
+    temp.src = src;
+
+    temp.onload = () => {
+        previewLink.href = page_link;
+        previewLink.title = title;
+        previewImage.src = src;
+        previewImage.alt = title;
+        previewTitle.innerText = title;
+        previewCaption.innerText = caption;
+
+        previewLink.classList.remove("blackout")
+    };
+
+
     
 };
 

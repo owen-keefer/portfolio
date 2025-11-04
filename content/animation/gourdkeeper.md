@@ -6,7 +6,7 @@ title = "Gourd Keeper"
 
 ![](/thumbnails/animation/tb_gourdkeeper.png)
 
-Gourd Keper
+Gourd Keeper
 
 2024
 

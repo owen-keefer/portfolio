@@ -11,6 +11,21 @@
                 {{ $imagePath := resources.Get (printf "./thumbnails/%s/%s" $pageName .file) }}
                 {{ $image := $imagePath.Process "png"}}
 
+                {{ $w := $image.Width}}
+                {{ $h := $image.Height}}
+                {{ $ratio := div (float $w) (float $h)}}
+
+                {{ if gt $ratio 1.0 }}
+                    {{ if gt $w 1920}}
+                        {{ $image = $image.Resize "1920x"}}
+                    {{ end }}
+                {{ else }}
+                    {{ if gt $h 1920}}
+                        {{ $image = $image.Resize "x1920"}}
+                    {{ end }}
+                {{ end }}
+
+
                 {{ if not $index}}
                     {{ $firstProcessed = $image }}
                 {{ end}}

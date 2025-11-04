@@ -543,6 +543,24 @@ iframe[src*="youtube.com"] {
   object-fit: cover;
 }
 
+#preview-link{
+  position: relative;
+}
+
+#preview-link::before{
+  content: "";
+  background: var(--background);
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+#preview-link.blackout::before{
+  opacity: 1.0;
+}
+
 .preview-text{
   border-top: 1px solid var(--accent);
   margin-top: 1rem;
