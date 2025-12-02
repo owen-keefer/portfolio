@@ -85,4 +85,49 @@ document.addEventListener("DOMContentLoaded", function() {
     selectorElements.forEach(element => {
         element.addEventListener("click", () => mobileScroll(element));
     });
+
+    //add touch gestures for preview-column
+    document.getElementsByClassName('preview-column')[0].addEventListener('touchstart', function(event){
+                touchstartX = event.changedTouches[0].screenX;
+                touchstartY = event.changedTouches[0].screenY;
+            }, false);
+    document.getElementsByClassName('preview-column')[0].addEventListener('touchend', function(event){
+                touchendX = event.changedTouches[0].screenX;
+                touchendY = event.changedTouches[0].screenY;
+                handleGesture();
+            }, false);
+    
+    // add touch gestures for mobile-selection-container
+
+    document.getElementsByClassName('mobile-selection-container')[0].addEventListener('touchstart', function(event){
+                touchstartX = event.changedTouches[0].screenX;
+                touchstartY = event.changedTouches[0].screenY;
+            }, false);
+    document.getElementsByClassName('mobile-selection-container')[0].addEventListener('touchend', function(event){
+                touchendX = event.changedTouches[0].screenX;
+                touchendY = event.changedTouches[0].screenY;
+                handleGesture();
+            }, false);
+    
 });
+
+// Swiping
+
+function handleGesture() {
+    var xDist = Math.abs(touchendX - touchstartX);
+    var yDist = Math.abs(touchstartY - touchendY); 
+    if ( (xDist < 50) || (yDist > xDist) )
+    {
+        return;
+    }
+    else
+    {
+        if (touchendX < touchstartX){
+            document.getElementById('mobile-next').click();
+        }
+
+        if (touchendX > touchstartX){
+            document.getElementById('mobile-prev').click();
+        }
+    };
+};

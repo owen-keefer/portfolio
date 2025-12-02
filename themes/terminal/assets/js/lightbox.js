@@ -114,6 +114,17 @@ document.addEventListener("DOMContentLoaded", function() {
             document.getElementById('lightbox').style.display = 'none';
         }
     });
+
+    //add touch gestures for lightbox
+    document.getElementById('lightbox').addEventListener('touchstart', function(event){
+                touchstartX = event.changedTouches[0].screenX;
+                touchstartY = event.changedTouches[0].screenY;
+            }, false);
+    document.getElementById('lightbox').addEventListener('touchend', function(event){
+                touchendX = event.changedTouches[0].screenX;
+                touchendY = event.changedTouches[0].screenY;
+                handleGesture();
+            }, false);
     
     //add the youtube lightbox on click
     var elements = document.querySelectorAll('a.lightbox-youtube');
@@ -145,3 +156,22 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
 });
+
+function handleGesture() {
+    var xDist = Math.abs(touchendX - touchstartX);
+    var yDist = Math.abs(touchstartY - touchendY); 
+    if ( (xDist < 50) || (yDist > xDist) )
+    {
+        return;
+    }
+    else
+    {
+        if (touchendX < touchstartX){
+            document.getElementById('next').click();
+        }
+
+        if (touchendX > touchstartX){
+            document.getElementById('prev').click();
+        }
+    };
+}
